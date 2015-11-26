@@ -13,13 +13,7 @@ var QueryString = function(api_key,api_sec) {
             query_string[pair[0]].push(pair[1]);
         }
     }
-
-    document.getElementById("apiKey").value = (!query_string.ak) ? api_key : query_string.ak;
-    document.getElementById("secret").value = (!query_string.as) ? api_sec : query_string.as;
-
-    console.log(query_string.ak);
-    console.log(query_string.as);
-    console.log(api_key);
-    console.log(api_sec);
-
+    return query_string;
 };
+document.getElementById("apiKey").value = (!QueryString.ak) ? api_key : QueryString.ak;
+document.getElementById("secret").value = (!QueryString.as) ? api_sec : QueryString.as;
