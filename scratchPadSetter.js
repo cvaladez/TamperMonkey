@@ -13,7 +13,6 @@ var QueryString = function(api_key,api_sec) {
             query_string[pair[0]].push(pair[1]);
         }
     }
-    return query_string;
 
     document.getElementById("apiKey").value = (!query_string.ak) ? api_key : query_string.ak;
     document.getElementById("secret").value = (!query_string.as) ? api_sec : query_string.as;
