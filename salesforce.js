@@ -1,16 +1,14 @@
-
     refreshAll=function(){
       setTimeout(refreshSeverity,1500);
       setTimeout(linkJira,1500);
       setTimeout(reviewStatus,1500);
-      setTimeout(refreshCaseStatus,1500);
-        
+      setTimeout(refreshCaseStatus,1500);        
     }
     
     function refreshCaseStatus(){$(".x-grid3-col-CASES_STATUS").each(function(index){if($(this).html() == "Waiting Tech Support"){$(this).parent().parent().css("background","#FFFF80");}});}
 
     function reviewStatus(){
-	$(".x-grid3-col-CASES_TYPE").each(function(index){
+	  $(".x-grid3-col-CASES_TYPE").each(function(index){
 		if($(this).html() == "&nbsp;"){
             $(this).parent().css({"background":"#FF0000","color": "blue"});
 				}
@@ -35,14 +33,11 @@ function refreshSeverity() {
     var d = new Date();
     var month = d.getMonth();
     var day = d.getDate() -1;
-    //var hours = d.getHours();
     var hours = 0; //To start at 0:00
     //var minutes = d.getMinutes();
     var minutes = 0; //To start at 0:00
     var output = new Date(d.getFullYear(), month, day, hours, minutes);
-    //console.log("SF compare to date: " +output)
-   //console.log(output);
-    //alert($(this).html() + ' -- ' + $(this).parent().attr('class'));
+
       $(".x-grid3-col-CASES_LAST_UPDATE").each(function(index) {
           var rowID = $(this).attr('id').substring(0,15);
           //console.log(rowID);
@@ -50,7 +45,7 @@ function refreshSeverity() {
           //console.log(parsed);
           var statusTest = $.inArray($("#"+rowID+"_CASES_STATUS").html(),['Awaiting Release','Escalated','TAM Pending','Solution Provided/Monitoring']);
           //console.log(statusTest);                          
-        if (parsed < output) {
+          if (parsed < output) {
             if (statusTest < 0) {
                 $(this).parent().parent().css("background", "#87CEFA");
             }
@@ -70,14 +65,6 @@ $(document).on("click","#00B70000007uuj0_refresh",function(){refreshAll();});
 
 $( document ).ready(function() {
 
-//If case listing changes, render new colors on top.
-//    $(".individualPalette listViewportWrapper").change(function(){
-//        alert("The text has been changed.");
-//    });
-
-//$(window).bind('load', function() {
-    //Reload everything when cases table gets refreshed.
-   // $("#00B70000007uuj0_refresh").on('click', alert("test"));
     //Reloads the page each 3 minutes.
     
     if ($("#CommentBody").length > 0) {
@@ -88,9 +75,6 @@ $( document ).ready(function() {
         checkIsPublished();
         $('#IsPublished').change(checkIsPublished);
     }
-
-// Previously used to show timer.
-//  $( ".divisionLabel" ).append( '<div>Registration closes in <span id="time"></span> minutes!</div>' );
     
     if ($(".listBody").length > 0){
         refreshAll();
@@ -101,4 +85,3 @@ $( document ).ready(function() {
 
       
 });
-
