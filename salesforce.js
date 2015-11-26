@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         Salesforce Tweaks -TEST TEST
-// @namespace    http://com.ooyala.johnny
-// @version      1.0
-// @description  Change textarea size / Color Sev 2 and Sev 1
-// @author       johnny@ooyala.com, ayepiz@ooyala.com, edmundo@ooyala.com
-// @match        https://na5.salesforce.com/*
-// @grant        none
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
-// ==/UserScript==
-
-
-
 
     refreshAll=function(){
       setTimeout(refreshSeverity,1500);
