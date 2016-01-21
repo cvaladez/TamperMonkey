@@ -61,7 +61,7 @@ function refreshSeverity() {
     }
 
 
-$(document).on("click","#00B70000007uuj0_refresh",function(){refreshAll();});
+$(document).on("click","#00B39000007tloI_refresh",function(){refreshAll();});
 
 $( document ).ready(function() {
 
@@ -81,7 +81,7 @@ $( document ).ready(function() {
     }
     
     setInterval(function(){
-        $("#00B70000007uuj0_refresh").click();console.log("refreshing");refreshAll();},60000);
+        $("#00B39000007tloI_refresh").click();console.log("refreshing");refreshAll();},60000);
 
       
 });
