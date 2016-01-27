@@ -61,7 +61,7 @@ function refreshSeverity() {
     }
 
 
-$(document).on("click",".btn refreshListButton",function(){refreshAll();});
+$(document).on("click",".refreshListButton",function(){console.log("test");refreshAll();});
 
 $( document ).ready(function() {
 
