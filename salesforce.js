@@ -61,7 +61,7 @@ function refreshSeverity() {
     }
 
 
-$(document).on("click","#00B39000007tloI_refresh",function(){refreshAll();});
+$(document).on("click",".btn refreshListButton",function(){refreshAll();});
 
 $( document ).ready(function() {
 
